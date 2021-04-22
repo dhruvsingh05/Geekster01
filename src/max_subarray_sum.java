@@ -1,21 +1,22 @@
 import java.util.*;
 public class max_subarray_sum {
     public static void main(String args[]){
-        int[] arr=new int[]{2,6,-40,3,5,7,-6,9,-80};
-        int j=0,k=0,sum=0,maxsum=0;
+        int[] arr=new int[]{2,6,-40,3,5,7,-6,9,-8};
+        int start=0,end=0,k=0,sum=0,maxsum=0;
         for(int i=0;i<(arr.length);i++)
         {
-            sum=sum+arr[k];
-            if(sum>0){
-                k++;
+            sum=sum+arr[i];
+            if(sum>maxsum){
+
                 maxsum=sum;
-            }else{
-                maxsum=sum-arr[j];
+               // end=k-1;
+            //    System.out.println(maxsum);
+
+            }
+            if(sum<0){
                 sum=0;
-                //i=k+1;
-                k=k+1;
             }
         }
-        System.out.println("hello world fuck");
+        System.out.println("max array"+maxsum);
     }
 }
